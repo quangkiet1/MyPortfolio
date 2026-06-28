@@ -16,6 +16,7 @@ import { cn } from "./lib/utils";
 gsap.registerPlugin(ScrollTrigger);
 
 const profile = {
+  // Trigger fresh build
   name: "Huỳnh Quang Kiệt",
   role: "Lập trình viên (Fullstack Developer)",
   location: "Thủ Đức, Hồ Chí Minh, Vietnam",
