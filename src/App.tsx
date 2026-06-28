@@ -16,62 +16,64 @@ import {
   WandSparkles,
 } from "lucide-react";
 import { Button } from "./components/Button";
-import { WebGLPortrait } from "./components/WebGLPortrait";
 import { cn } from "./lib/utils";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const profile = {
-  name: "Tên Của Bạn",
-  role: "Creative Frontend Developer",
-  location: "Ho Chi Minh City, Vietnam",
+  name: "Huỳnh Quang Kiệt",
+  role: "Lập trình viên (Fullstack Developer)",
+  location: "Thủ Đức, Hồ Chí Minh, Vietnam",
   summary:
-    "Mình thiết kế và xây dựng những trải nghiệm web có cảm giác sống động: giao diện rõ ràng, animation có chủ đích, hiệu năng tốt và một chút chất điện ảnh vừa đủ để sản phẩm đáng nhớ.",
-  email: "hello@yourname.dev",
-  github: "github.com/yourname",
-  linkedin: "linkedin.com/in/yourname",
+    "Sinh viên ngành Công nghệ Thông tin tại HUTECH với định hướng trở thành Web Developer. Có kinh nghiệm xây dựng dự án bằng Next.js, React, TypeScript, ASP.NET Core MVC và thiết kế cơ sở dữ liệu. Mong muốn tìm kiếm môi trường thực tế để đóng góp và phát triển chuyên môn.",
+  email: "huynhkietzuki@gmail.com",
+  github: "github.com",
+  linkedin: "nguyentungduong.com",
 };
 
 const stats = [
-  ["05+", "năm kinh nghiệm"],
-  ["32", "dự án hoàn thiện"],
-  ["12", "thương hiệu đồng hành"],
+  ["03", "năm học tập & thực hành"],
+  ["03", "dự án nổi bật"],
+  ["02", "chứng chỉ chuyên môn"],
 ];
 
 const skills = [
-  { icon: Code2, title: "Frontend", items: "React, Next.js, TypeScript" },
-  { icon: WandSparkles, title: "Motion", items: "GSAP, Framer Motion, Lottie" },
-  { icon: Layers3, title: "3D/WebGL", items: "Three.js, R3F, Shader basics" },
-  { icon: Palette, title: "UI/UX", items: "Design systems, Figma, shadcn/ui" },
+  { icon: Code2, title: "Frontend", items: "HTML5, CSS3, JavaScript, ReactJS, Next.js, Tailwind CSS" },
+  { icon: Layers3, title: "Backend", items: "C#, Java, ASP.NET Core MVC, SQL Server, PostgreSQL, Prisma ORM" },
+  { icon: WandSparkles, title: "Tools", items: "Git, GitHub, VS Code, Postman, Figma" },
+  { icon: Palette, title: "Khác", items: "Teamwork, Time Management, Gemini AI API" },
 ];
 
 const projects = [
   {
-    title: "Atlas Studio",
-    type: "Brand website",
-    year: "2026",
+    title: "Web Linh Kiện & Build PC",
+    type: "E-commerce & AI",
+    year: "2025-2026",
     detail:
-      "Một website studio có hero WebGL, hệ motion theo scroll và component system dễ tái sử dụng.",
-    stack: ["React", "GSAP", "Three.js"],
+      "Website thương mại điện tử tích hợp xác thực JWT, OTP, thanh toán và chức năng Build PC với sự tư vấn cấu hình từ Gemini AI API.",
+    stack: ["Next.js", "React", "Tailwind", "PostgreSQL"],
     color: "bg-coral",
+    link: "https://github.com/quangkiet1/build_PC.git",
   },
   {
-    title: "Nova Commerce",
-    type: "SaaS dashboard",
-    year: "2025",
+    title: "Quản Lý Công Việc & Dự Án",
+    type: "Task Management",
+    year: "6/2026",
     detail:
-      "Dashboard vận hành bán hàng với bảng dữ liệu nhanh, lọc thông minh và visual hierarchy rõ ràng.",
-    stack: ["Next.js", "Tailwind", "shadcn/ui"],
+      "Hệ thống quản lý tiến độ công việc, giao việc theo thời gian thực với phân quyền Admin, Leader, Member.",
+    stack: ["ASP.NET Core", "SQL Server", "EF Core"],
     color: "bg-mint",
+    link: "https://github.com/PhamVanPhuc2410/WEB_QUANLY_CV_NHOM.git",
   },
   {
-    title: "Muse Archive",
-    type: "Interactive archive",
-    year: "2025",
+    title: "So Sánh Điểm Excel",
+    type: "Data Processing",
+    year: "5/2026",
     detail:
-      "Kho nội dung tương tác kết hợp animation route transition, masonry layout và preview giàu cảm xúc.",
-    stack: ["Framer Motion", "CMS", "UX"],
+      "Công cụ Drag & Drop tự động đọc, xử lý và so sánh tệp dữ liệu Excel lớn, hiển thị kết quả trực quan và xuất báo cáo.",
+    stack: ["JavaScript", "Data Processing", "UI/UX"],
     color: "bg-brass",
+    link: "https://github.com/quangkiet1/DuAnSSShiet.git",
   },
 ];
 
@@ -175,26 +177,21 @@ export default function App() {
 
   return (
     <div ref={rootRef} className="min-h-screen bg-paper text-ink antialiased">
-      <header className="fixed left-0 top-0 z-50 w-full border-b border-ink/10 bg-paper/80 backdrop-blur-xl">
-        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          <a href="#home" className="font-display text-base font-bold">
-            {profile.name}
+      <header className="fixed left-0 top-0 z-50 w-full bg-paper/90 backdrop-blur-xl border-b border-ink/5">
+        <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8 text-ink">
+          <a href="#home" className="text-3xl font-black tracking-tight flex items-center">
+            Quang<span className="text-[#f0502e]">Kiet</span>
           </a>
-          <div className="hidden items-center gap-6 text-sm font-medium text-ink/70 md:flex">
-            <a className="transition hover:text-ink" href="#work">
-              Dự án
-            </a>
-            <a className="transition hover:text-ink" href="#skills">
-              Kỹ năng
-            </a>
-            <a className="transition hover:text-ink" href="#contact">
-              Liên hệ
-            </a>
+          <div className="hidden items-center gap-8 text-sm font-semibold md:flex text-ink/80">
+            <a className="transition hover:text-[#f0502e]" href="#home">Home</a>
+            <a className="transition hover:text-[#f0502e]" href="#about">About</a>
+            <a className="transition hover:text-[#f0502e]" href="#work">Portfolio</a>
+            <a className="transition hover:text-[#f0502e]" href="#skills">Skills</a>
+            <a className="transition hover:text-[#f0502e]" href="#contact">Contact</a>
           </div>
-          <a href={`mailto:${profile.email}`} aria-label="Gửi email">
-            <Button className="h-10 px-3" variant="secondary">
-              <Mail className="h-4 w-4" />
-              <span className="hidden sm:inline">Email</span>
+          <a href="/CV_Huynh_Quang_Kiet.pdf" target="_blank" aria-label="Tải CV">
+            <Button className="h-10 px-6 bg-[#f0502e] hover:bg-[#d84829] text-white rounded-full text-xs font-bold transition-all uppercase tracking-wider">
+              Tải CV
             </Button>
           </a>
         </nav>
@@ -203,83 +200,63 @@ export default function App() {
       <main>
         <section
           id="home"
-          className="relative overflow-hidden px-4 pb-20 pt-28 sm:px-6 lg:px-8"
+          className="relative flex min-h-[90vh] pt-24 w-full items-center justify-center overflow-hidden bg-paper"
         >
-          <div className="absolute inset-0 bg-grid bg-[length:44px_44px] opacity-45" />
-          <div className="absolute left-0 top-16 h-36 w-full bg-gradient-to-b from-paper to-transparent" />
-          <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:min-h-[calc(100vh-4rem)] lg:grid-cols-[1fr_0.92fr]">
-            <div className="max-w-3xl">
-              <div
+          {/* Subtle Wavy Background Lines */}
+          <div className="absolute inset-0 z-0 pointer-events-none opacity-[0.03] flex items-center justify-center">
+            <svg width="100%" height="100%" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill="none" stroke="#000" strokeWidth="2" d="M0,160 C320,300,420,0,720,160 C1020,320,1120,20,1440,160" />
+              <path fill="none" stroke="#000" strokeWidth="2" d="M0,180 C320,320,420,20,720,180 C1020,340,1120,40,1440,180" />
+              <path fill="none" stroke="#000" strokeWidth="2" d="M0,200 C320,340,420,40,720,200 C1020,360,1120,60,1440,200" />
+            </svg>
+          </div>
+          
+          <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-8 grid lg:grid-cols-[1.3fr_0.7fr] items-center gap-16 lg:gap-8 mb-20">
+            {/* Left: Typography */}
+            <div className="flex flex-col justify-center text-left pt-10 lg:pt-0">
+              <h1 
                 data-hero
-                className="mb-5 inline-flex items-center gap-2 rounded-md border border-ink/10 bg-white/65 px-3 py-2 text-sm font-semibold shadow-insetLine backdrop-blur"
+                className="flex flex-col text-ink font-sans tracking-tight"
               >
-                <Sparkles className="h-4 w-4 text-coral" />
-                Available for selected projects
-              </div>
-              <h1
-                data-hero
-                className="font-display text-[clamp(3.2rem,11vw,8.5rem)] font-black uppercase leading-[0.84] tracking-normal"
-              >
-                Portfolio
-                <span className="block text-coral">Cá Nhân</span>
+                <span className="text-[8vw] lg:text-[3.5rem] font-medium leading-[1.2] text-[#3c3c3c]">Hi, I'm {profile.name}</span>
+                <span className="text-[8vw] lg:text-[3.5rem] font-medium leading-[1.2] text-[#3c3c3c]">I build premium products</span>
+                <span className="text-[8vw] lg:text-[3.5rem] font-medium leading-[1.2] text-[#3c3c3c]">for</span>
+                <span className="text-[9vw] lg:text-[4rem] font-bold leading-[1.15] mt-2 flex flex-wrap items-center gap-4 text-ink">
+                  Website & Development 
+                  <span className="hidden md:inline-block h-[2px] w-16 bg-ink/30"></span>
+                </span>
               </h1>
-              <p
-                data-hero
-                className="mt-7 max-w-2xl text-lg leading-8 text-ink/72 sm:text-xl"
-              >
-                {profile.summary}
-              </p>
-              <div data-hero className="mt-8 flex flex-wrap items-center gap-3">
-                <a href="#work">
-                  <Button>
-                    Xem dự án <ArrowUpRight className="h-4 w-4" />
-                  </Button>
-                </a>
-                <a href="/cv.pdf">
-                  <Button variant="secondary">
-                    <Download className="h-4 w-4" />
-                    Tải CV
-                  </Button>
-                </a>
-              </div>
-              <div
-                data-hero
-                className="mt-10 grid max-w-xl grid-cols-3 divide-x divide-ink/10 rounded-md border border-ink/10 bg-white/60 shadow-insetLine backdrop-blur"
-              >
-                {stats.map(([value, label]) => (
-                  <div key={label} className="px-4 py-4">
-                    <div className="font-display text-2xl font-black sm:text-3xl">
-                      {value}
-                    </div>
-                    <div className="mt-1 text-xs font-semibold uppercase tracking-normal text-ink/55">
-                      {label}
-                    </div>
-                  </div>
-                ))}
+              
+              <div data-hero className="mt-12 flex items-center gap-4 text-sm font-bold tracking-widest text-ink/60 uppercase">
+                <div className="h-[2px] w-10 bg-[#f0502e]"></div>
+                Scroll to explore
               </div>
             </div>
 
-            <div data-hero className="relative min-h-[440px] lg:min-h-[620px]">
-              <div className="absolute inset-0 rounded-md bg-gradient-to-br from-white via-paper to-mint/30 shadow-soft" />
-              <div className="absolute inset-x-6 bottom-6 top-6 overflow-hidden rounded-md border border-ink/10 bg-white/35 backdrop-blur-sm">
-                <WebGLPortrait />
-              </div>
-              <motion.div
-                initial={{ y: 14, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 1, duration: 0.7, ease: "easeOut" }}
-                className="absolute bottom-10 left-0 max-w-[18rem] rounded-md border border-ink/10 bg-paper/90 p-4 shadow-soft backdrop-blur"
-              >
-                <p className="text-xs font-bold uppercase tracking-normal text-ink/50">
-                  Current focus
-                </p>
-                <p className="mt-2 text-sm font-semibold leading-6">
-                  Building premium digital experiences with elegant motion and
-                  practical design systems.
-                </p>
-              </motion.div>
-              <div className="absolute right-3 top-4 rounded-md bg-ink px-3 py-2 text-sm font-bold text-paper">
-                {profile.location}
+            {/* Right: Circular Portrait */}
+            <div data-hero className="relative flex justify-center lg:justify-end w-full">
+              <div className="relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 group">
+                 {/* Red wavy pattern circle behind */}
+                 <div className="absolute inset-0 scale-[1.15] translate-x-4 -translate-y-4 rounded-full overflow-hidden opacity-90 transition-transform duration-700 group-hover:scale-[1.2] group-hover:rotate-6">
+                    <div className="absolute inset-0 bg-white"></div>
+                    <svg className="absolute inset-0 w-full h-full text-[#f0502e]" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+                      <defs>
+                        <pattern id="red-wave" x="0" y="0" width="30" height="15" patternUnits="userSpaceOnUse">
+                          <path d="M0 7.5 Q 7.5 0, 15 7.5 T 30 7.5" fill="none" stroke="currentColor" strokeWidth="4"/>
+                        </pattern>
+                      </defs>
+                      <rect x="0" y="0" width="100%" height="100%" fill="url(#red-wave)"/>
+                    </svg>
+                 </div>
+                 
+                 {/* Main Avatar Circle */}
+                 <div className="relative w-full h-full rounded-full overflow-hidden bg-[#22201c] flex items-end justify-center shadow-[0_20px_50px_-12px_rgba(0,0,0,0.3)] z-10 transition-transform duration-500 group-hover:-translate-y-2">
+                   <img 
+                     src="/avatar.png" 
+                     alt="Huỳnh Quang Kiệt" 
+                     className="relative z-10 max-h-[92%] w-auto object-contain object-bottom drop-shadow-2xl filter contrast-[1.05]" 
+                   />
+                 </div>
               </div>
             </div>
           </div>
@@ -298,7 +275,7 @@ export default function App() {
                 ].map((item) => (
                   <span
                     key={`${groupIndex}-${item}`}
-                    className="font-display text-2xl font-bold uppercase tracking-normal text-paper"
+                    className="font-sans tracking-tight text-2xl font-bold uppercase tracking-normal text-paper"
                   >
                     {item}
                   </span>
@@ -314,7 +291,7 @@ export default function App() {
               <p className="text-sm font-bold uppercase tracking-normal text-coral">
                 Kỹ năng
               </p>
-              <h2 className="mt-3 font-display text-4xl font-black leading-tight sm:text-5xl">
+              <h2 className="mt-3 font-sans tracking-tight text-4xl font-black leading-tight sm:text-5xl">
                 Làm sản phẩm đẹp nhưng vẫn chạy mượt, dễ mở rộng.
               </h2>
             </div>
@@ -328,7 +305,7 @@ export default function App() {
                     <div className="flex h-11 w-11 items-center justify-center rounded-md bg-ink text-paper">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h3 className="mt-6 font-display text-xl font-bold">
+                    <h3 className="mt-6 font-sans tracking-tight text-xl font-bold">
                       {title}
                     </h3>
                     <p className="mt-3 leading-7 text-ink/65">{items}</p>
@@ -349,7 +326,7 @@ export default function App() {
                 <p className="text-sm font-bold uppercase tracking-normal text-coral">
                   Dự án chọn lọc
                 </p>
-                <h2 className="mt-3 font-display text-4xl font-black leading-tight sm:text-5xl">
+                <h2 className="mt-3 font-sans tracking-tight text-4xl font-black leading-tight sm:text-5xl">
                   Những giao diện có nhịp, có điểm nhấn và có lý do tồn tại.
                 </h2>
               </div>
@@ -361,10 +338,13 @@ export default function App() {
 
             <div className="mt-12 grid gap-5">
               {projects.map((project, index) => (
-                <article
+                <a
                   key={project.title}
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   data-reveal
-                  className="group grid overflow-hidden rounded-md border border-ink/10 bg-paper shadow-insetLine transition duration-300 hover:-translate-y-1 hover:shadow-soft lg:grid-cols-[0.85fr_1.15fr]"
+                  className="group grid overflow-hidden rounded-md border border-ink/10 bg-paper shadow-insetLine transition duration-300 hover:-translate-y-1 hover:shadow-soft lg:grid-cols-[0.85fr_1.15fr] cursor-pointer"
                 >
                   <div
                     className={cn(
@@ -377,7 +357,7 @@ export default function App() {
                       0{index + 1}
                     </div>
                     <div className="absolute bottom-7 left-7 right-7">
-                      <div className="h-24 rounded-md border border-ink/15 bg-paper/65 p-3 backdrop-blur">
+                      <div className="h-24 rounded-md border border-ink/15 bg-paper/65 p-3 backdrop-blur transition-transform duration-500 group-hover:scale-[1.02]">
                         <div className="flex h-full items-end gap-2">
                           <div className="h-12 flex-1 rounded-sm bg-ink/80" />
                           <div className="h-20 flex-1 rounded-sm bg-paper" />
@@ -387,13 +367,13 @@ export default function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col justify-between p-6 sm:p-8">
+                  <div className="flex flex-col justify-between p-6 sm:p-8 group-hover:bg-ink/[0.02] transition-colors">
                     <div>
                       <div className="flex items-center justify-between gap-4 text-sm font-bold uppercase tracking-normal text-ink/45">
                         <span>{project.type}</span>
                         <span>{project.year}</span>
                       </div>
-                      <h3 className="mt-5 font-display text-3xl font-black sm:text-4xl">
+                      <h3 className="mt-5 font-sans tracking-tight text-3xl font-black sm:text-4xl group-hover:text-[#f0502e] transition-colors">
                         {project.title}
                       </h3>
                       <p className="mt-4 max-w-2xl text-lg leading-8 text-ink/68">
@@ -411,12 +391,12 @@ export default function App() {
                           </span>
                         ))}
                       </div>
-                      <Button className="h-10 px-3" variant="ghost">
+                      <Button className="h-10 px-3 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" variant="ghost">
                         <ArrowUpRight className="h-5 w-5" />
                       </Button>
                     </div>
                   </div>
-                </article>
+                </a>
               ))}
             </div>
           </div>
@@ -428,7 +408,7 @@ export default function App() {
               <p className="text-sm font-bold uppercase tracking-normal text-coral">
                 Quy trình
               </p>
-              <h2 className="mt-3 font-display text-4xl font-black leading-tight sm:text-5xl">
+              <h2 className="mt-3 font-sans tracking-tight text-4xl font-black leading-tight sm:text-5xl">
                 Từ ý tưởng tới trải nghiệm có thể dùng thật.
               </h2>
             </div>
@@ -439,10 +419,10 @@ export default function App() {
                   data-reveal
                   className="rounded-md border border-ink/10 bg-white/70 p-6 shadow-insetLine"
                 >
-                  <div className="font-display text-4xl font-black text-coral">
+                  <div className="font-sans tracking-tight text-4xl font-black text-coral">
                     {number}
                   </div>
-                  <h3 className="mt-5 font-display text-xl font-bold">
+                  <h3 className="mt-5 font-sans tracking-tight text-xl font-bold">
                     {title}
                   </h3>
                   <p className="mt-3 leading-7 text-ink/65">{text}</p>
@@ -461,7 +441,7 @@ export default function App() {
               <p className="text-sm font-bold uppercase tracking-normal text-mint">
                 Liên hệ
               </p>
-              <h2 className="mt-3 max-w-4xl font-display text-4xl font-black leading-tight sm:text-6xl">
+              <h2 className="mt-3 max-w-4xl font-sans tracking-tight text-4xl font-black leading-tight sm:text-6xl">
                 Bạn có một sản phẩm đáng được kể bằng giao diện tốt hơn?
               </h2>
             </div>
