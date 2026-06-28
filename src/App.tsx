@@ -8,6 +8,7 @@ import {
   GitBranch,
   Layers3,
   Palette,
+  WandSparkles,
 } from "lucide-react";
 import { Button } from "./components/Button";
 import { cn } from "./lib/utils";
