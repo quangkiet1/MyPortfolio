@@ -1,19 +1,13 @@
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   ArrowUpRight,
   BriefcaseBusiness,
   Code2,
-  Download,
-  ExternalLink,
   GitBranch,
   Layers3,
-  Mail,
   Palette,
-  Sparkles,
-  WandSparkles,
 } from "lucide-react";
 import { Button } from "./components/Button";
 import { cn } from "./lib/utils";
