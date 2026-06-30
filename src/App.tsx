@@ -5,8 +5,10 @@ import {
   ArrowUpRight,
   BriefcaseBusiness,
   Code2,
+  ExternalLink,
   GitBranch,
   Layers3,
+  Mail,
   Palette,
   WandSparkles,
 } from "lucide-react";
